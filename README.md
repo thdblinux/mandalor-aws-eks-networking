@@ -65,3 +65,7 @@ No modules.
 | <a name="output_public_subnets"></a> [public\_subnets](#output\_public\_subnets) | SSM Parameters com os valores dos ID's das Subnets Públicas |
 | <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | SSM Parameter com o valor do vpc\_id |
 <!-- END_TF_DOCS -->
+EKS
+
+VPC Networking
+![vpc-eks](https://github.com/user-attachments/assets/219a34c9-83ee-4818-b299-3cc9630ea1f7)
