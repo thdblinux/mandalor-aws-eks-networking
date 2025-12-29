@@ -1,4 +1,3 @@
-
 resource "aws_subnet" "database" {
   count = length(var.database_subnets)
 
@@ -15,7 +14,6 @@ resource "aws_subnet" "database" {
     aws_vpc_ipv4_cidr_block_association.main
   ]
 }
-
 
 resource "aws_network_acl" "database" {
 
@@ -48,13 +46,14 @@ resource "aws_network_acl_rule" "deny" {
   to_port    = 0
 }
 
+
+
 resource "aws_network_acl_association" "database" {
   count = length(var.database_subnets)
 
   network_acl_id = aws_network_acl.database.id
   subnet_id      = aws_subnet.database[count.index].id
 }
-
 
 resource "aws_network_acl_rule" "allow_3306" {
 
@@ -74,7 +73,6 @@ resource "aws_network_acl_rule" "allow_3306" {
   from_port  = 3306
   to_port    = 3306
 }
-
 
 resource "aws_network_acl_rule" "allow_6379" {
 

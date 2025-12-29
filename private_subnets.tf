@@ -47,7 +47,6 @@ resource "aws_route_table" "private" {
   }
 }
 
-
 resource "aws_route" "private" {
   count = length(var.private_subnets)
 
@@ -63,7 +62,6 @@ resource "aws_route" "private" {
   ].id
 
 }
-
 
 resource "aws_route_table_association" "private" {
   count = length(var.private_subnets)
